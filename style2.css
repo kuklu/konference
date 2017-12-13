@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* pozadí horní část, kde je menu + spodek*/
+body{
+	background: rgb(182, 170, 123); //#8D372A;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 15px;
+	margin-right: 150px;
+	margin-left: 150px;
+
+}
+
+/* uprava stylu písma nadpisu a "druhého" nadpisu*/
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 600; 
+  src: local('Lobster'), url(http://themes.googleusercontent.com/static/fonts/lobster/v5/MWVf-Rwh4GLQVBEwbyI61Q.woff) format('woff');
+}
+/* styl písma pod "druhým" nadpisem*/
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(http://themes.googleusercontent.com/static/fonts/cabin/v4/JEgmtEDzc-IH8jBshQXrYA.woff) format('woff');
+}
+
+body header {
+}
+/* poloha menu */
+body nav{
+	float: right;
+	padding-right: 0px;
+  padding-top: 35px;
+}
+/* úprava nadpisu - styl, poloha*/
+body header h1 {
+	font-family: 'Lobster', Georgia, Times, serif;  
+	font-size: 53px;
+	margin: 0px;
+	color: #FFF;
+	float: left;
+	padding-left: 50px;
+  padding-bottom: 8px;
+	text-shadow: 1px 1px 2px #666;
+  
+	/*-webkit-animation: animace 1s 1 ease;
+	-moz-animation: animace 1s 1 ease;
+	-o-animation: animace 1s 1 ease;	  */
+}
+/* úprava druhého nadpisu - styl, poloha*/
+body article header h1 {
+    font-size: 30px;
+	color:#000;
+	float: none;
+	padding-left: 0px;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+}
+ /* barva prvního písmene*/
+body article header h1:first-letter{
+	color: #742a1d;	
+}
+
+/* styl textu pod druhým nadpisem - velikost, zarovnání, řádkování*/
+p {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+	  vertical-align:center;
+  
+}
+
+/*safasfas */
+/*upravy textu v menu, zaoblení rámwčků */
+a{
+	text-decoration: none;
+	color: #FFF;
+	font-family: 'Cabin', /*Helvetica,*/ Arial, sans-serif;
+	font-size: 15px;
+	line-height: 25px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-right: 7px;
+	padding-left: 7px;
+	background-color: #a43c2c;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	-webkit-border-radius: 4px;            
+	-moz-border-radius: 4px;  
+	border-radius: 4px;
+}
+ul{
+    list-style:none;
+}
+li{
+	float: left;	
+}
+
+/* ????? */
+a:hover{
+	background-color: #742A1D;	
+  -webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out; 
+}
+nav li.active a{
+	background-color: #742A1D;
+}
+
+/* umístění a nastavení parametru bíléh obdélníku*/
+article{
+	background-color: #FFF;
+	border-right-width: 100px;
+	border-left-width: 100px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #742A1D;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-left-color: #742A1D;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	text-align: justify;
+}
+/* barva pozadí pro jednotlivé prohlížeče? */
+#article-top{
+	margin-top:10px;
+	background: #a43c2c; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #a43c2c 50%, #e1e1e1 50%, #742a1d 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,#a43c2c), color-stop(50%,#e1e1e1),     color-stop(50%,#742a1d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* IE10+ */
+	background: linear-gradient(135deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* W3C */
+}
+#logo{
+	display:none;
+}
+footer{
+	color:#FFF;
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	text-align:right;
+	padding-right:151px;
+	padding-top:100px;
+	padding-bottom:2px;
+	background: #742a1d; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #742a1d 50%, #a43c2c 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,#742a1d), color-stop(50%,#a43c2c)); /* 		    Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* IE10+ */
+	background: linear-gradient(135deg,  #742a1d 50%,#a43c2c 50%); /* W3C */
+}
+body article footer{
+	display:none;
+}
+@-webkit-keyframes animace {
+	from { -webkit-transform: rotate(0deg) scale(0.738) skew(1deg) translate(0px); }
+	to { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+}
+@-moz-keyframes animace {
+	from { -moz-transform: rotate(0deg) scale(0.738) skew(1deg) translate(0px); }
+	to { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+}
+@-o-keyframes animace {
+	from { -o-transform: rotate(0deg) scale(0.738) skew(1deg) translate(0px); }
+	to { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+}
