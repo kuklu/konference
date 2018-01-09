@@ -10,16 +10,19 @@ if(isset($_SESSION["username"]))
   switch ($_SESSION["prava"]) {
 case "4" : $menu="menu_4.php"; break;
 case "1" : $menu="menu_1.php"; break;
+case "3" : $menu="menu_3.php"; break;
 default : $menu="menu.php";
 }  
    
   switch ($page) {
 case "admin.inc.php" : $nadpis="Administrace uživatelů"; break;
-case "clanky.php" : $nadpis="Přehled článků"; break;
+case "clanky.php": $nadpis="Přehled článků"; break;
 case "vypis_ano.php" : $nadpis="Přehled článků"; break;
 case "login.php" : $nadpis="Přihlášení"; break;
 case "novyclanek.php" : $nadpis="Vložit článek"; break;
 case "mojeclanky.php" : $nadpis="Moje články"; break;
+case "hodnoceni.php" : $nadpis="Výpis přidělených článků k recenzi"; break;
+case "recenze.php": $nadpis="Administrace článků"; break;
 default : $nadpis="Vítejte";
 }  
    

@@ -30,7 +30,7 @@
 <?php
 $nadpis="Výpis článků";
 include "db.php";
-echo "<p> Výpis mých článků ";
+echo "<br>";
 $kdo=$_SESSION['ID_user'];
 
 

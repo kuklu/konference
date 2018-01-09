@@ -17,7 +17,7 @@ if(isset($_SESSION['prihlasen']) or $_SESSION['prava']<3){
        </head>
 
 
-
+  <br/>
 <table class="table table-bordered">
      <thead>
       <tr>

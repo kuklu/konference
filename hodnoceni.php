@@ -10,10 +10,27 @@
        </head>
 
 
+<table class="table table-bordered">
+     <thead>
+<tr>
+<th>ID</th>
+<th>Název</th>
+<th>Anotace</th>
+<th>URL</th>
+<th>Struktura textu</th>
+<th>Nové myšlenky</th>
+<th>Zdroje</th>
+<th>Hodnocení</th>
+</tr>
+     </thead>
 
 
 <tbody>
 <?php
+if(isset($_SESSION['prihlasen']) or $_SESSION['prava']<2){
+    echo "Nemáš právo to vidět";
+    exit;
+    }
 //session_start();
 $nadpis="Výpis článků";
 include "db.php";
@@ -22,7 +39,7 @@ $kdo=$_SESSION['ID_user'];
 
 
 
-echo "<p> Výpis přidělených článků k recenzi";
+echo "<br>";
 
 $dotaz_clanky = $connect->prepare("SELECT * FROM clanky WHERE recenzent1=$kdo OR recenzent2=$kdo OR recenzent3=$kdo "  );
 $dotaz_clanky->execute();
@@ -30,21 +47,12 @@ $clanek = $dotaz_clanky ->fetchAll();
 
 foreach ($clanek as $clanky) {
     $ID_c= $clanky['ID_clanky'];
+   
+//<table style='width: 500px;' border='1'>     // dřív bylo v echu "tady"
     echo "
- <form action='save_hodnoceni.php' method='post' name='hodnoceni'> 
- <input type='hidden' name='sent' value=''/> 
-<table style='width: 500px;' border='1'>
-<tbody>
-<tr>
-<td>ID</td>
-<td>nazev</td>
-<td>anotace</td>
-<td>URL</td>
-<td>Struktura textu</td>
-<td>Nové myšlenky</td>
-<td>Zdroje</td>
-<td>Hodnocení</td>
-</tr>
+<form action='save_hodnoceni.php' method='post' name='hodnoceni'> 
+<input type='hidden' name='sent' value=''/> 
+
 <tr>
 <td>". $clanky['ID_clanky']. "</td>
 <td>". $clanky['nazev']. "</td>
@@ -78,12 +86,14 @@ foreach ($clanek as $clanky) {
 <td>  <input type='submit' name='send' value='Ulož'/>
 </form></td>
 
-</tr>
-</tbody>
-</table>";
-    
-    
+</tr>";
 }
 
 ?>
+
+</tbody>
+</table>
+</html>
+    
+    
 

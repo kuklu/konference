@@ -1,9 +1,8 @@
 <?php
-
-/**
- * @author 
- * @copyright 2017
- */
+if(isset($_SESSION['prihlasen']) or $_SESSION['prava']<3){
+    echo "Nemáš právo to vidět";
+    exit;
+    }
 ?>
 <!DOCTYPE html>
 

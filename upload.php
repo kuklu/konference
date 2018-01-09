@@ -10,11 +10,11 @@ include "db.php";
 
 
 
- $targetfolder = "upload/";
+ $targetfolder =  "upload/";
 
  $targetfolder = $targetfolder . basename( $_FILES['file']['name']) ;
 
- $ok=1;
+ $ok= 1;
 
 $file_type=$_FILES['file']['type'];
 
@@ -28,7 +28,7 @@ if ($file_type=="application/pdf") {
 //echo $targetfolder;
  
  $vloz = $connect->prepare("INSERT into clanky (nazev, anotace, URL, vlozil, recenzent1, recenzent2, recenzent3, schvaleno) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-// Vykon�n� dotazu
+// Vykonání dotazu
 $vysledek = $vloz->execute(array(
   $nazev, 
   $anotace,
@@ -42,7 +42,7 @@ $vysledek = $vloz->execute(array(
 ));
  
  
- 
+echo "Soubor byl úspěšně nahrán"; 
  
  }
 
@@ -56,7 +56,7 @@ $vysledek = $vloz->execute(array(
 
 else {
 
- echo "Nahr�vat je mo�n� pouze PDF.<br>";
+ echo "Nahrávat je možné pouze PDF.<br>";
  
 
 }

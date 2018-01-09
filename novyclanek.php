@@ -17,7 +17,7 @@
 
 
 
-
+ <br/>
 <strong>Název práce</strong> <br/> 
 <textarea class="nazev" name="nazev"></textarea> <br/><br/>  
 <strong>Anotace práce</strong> <br/>
@@ -27,6 +27,7 @@
 
 
 
+<br />
 <br />
 <input type="submit" value="Nahrát práci" />
 
