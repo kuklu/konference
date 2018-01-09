@@ -25,15 +25,17 @@ if ($file_type=="application/pdf") {
  {
 
  //echo "The file ". basename( $_FILES['file']['name']). " is uploaded";
- echo $targetfolder;
+//echo $targetfolder;
  
- $vloz = $connect->prepare("INSERT into clanky (nazev, anotace, URL, vlozil, recenzovano, recenzoval) VALUES(?, ?, ?, ?, ?, ?)");
+ $vloz = $connect->prepare("INSERT into clanky (nazev, anotace, URL, vlozil, recenzent1, recenzent2, recenzent3, schvaleno) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 // Vykonání dotazu
 $vysledek = $vloz->execute(array(
   $nazev, 
   $anotace,
   $targetfolder,
   $IDu,
+  0,
+  0,
   0,
   0
   

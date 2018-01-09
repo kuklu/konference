@@ -1,0 +1,4 @@
+<?php
+
+?>
+Akce byla úspěšná :) 

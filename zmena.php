@@ -12,5 +12,5 @@ $vysledek = $zmena_prav->execute(array(
   $prava, 
   $ID,
   ));
-  header("location:start.php");
+  header("location:page.php?page=admin.inc.php");
 ?>

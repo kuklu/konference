@@ -1,30 +1,40 @@
 <?php
 session_start();
 $menu="menu.php";
+$nadpis="";
+$page=$_GET['page'];
 if(isset($_SESSION["username"]))  
  {  
-  //include "log.inc.php"; - zobrazení, kdo je přihlášen
-  
-  // podle přihlášení vyber menu 
+  //include "log.inc.php";
+   
   switch ($_SESSION["prava"]) {
-case "1" : $menu="menu_1.php"; break;
-case "3" : $menu="menu_3.php"; break;
 case "4" : $menu="menu_4.php"; break;
+case "1" : $menu="menu_1.php"; break;
 default : $menu="menu.php";
 }  
    
+  switch ($page) {
+case "admin.inc.php" : $nadpis="Administrace uživatelů"; break;
+case "clanky.php" : $nadpis="Přehled článků"; break;
+case "vypis_ano.php" : $nadpis="Přehled článků"; break;
+case "login.php" : $nadpis="Přihlášení"; break;
+case "novyclanek.php" : $nadpis="Vložit článek"; break;
+case "mojeclanky.php" : $nadpis="Moje články"; break;
+default : $nadpis="Vítejte";
+}  
    
    
  }  
  else  
  {  
-   // echo "Nejste přihlášen - můžete se přihlásit <a href='login3.php'>zde</a>";
+    //echo "Nejste přihlášen - můžete se přihlásit <a href='login.php'>zde</a>";
      // header("location:login3.php");  
  }  
-// definování proměnných před přihlášením
-$page = "uvod.php";
-$nadpis = "Vítejte";
-// vlastní stránky
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -34,22 +44,17 @@ $nadpis = "Vítejte";
                <meta charset="UTF-8" />
                <title>Geomatika v článcích</title>
                <link rel="stylesheet" href="style2.css" type="text/css" />
-               <meta name="viewport" content="width=device-width, initial-scale=1.0">
        </head>
 
        <body>
                <header>
                        <div id="logo">&nbsp;</div>
                        <h1>Geomatika v&nbsp;článcích</h1>
-                           
-
                </header>
-               
-        
+
                <nav>
                        <ul>
                        <?php
-                       //vložení menu
                           include "$menu";     
                                ?>
                        </ul>
@@ -61,18 +66,32 @@ $nadpis = "Vítejte";
 
                <article>
                        <header>
-                               <h1>Vítejte!</h1>
+                               <h1> <?php
+                          echo $nadpis;     
+                               ?></h1>
                        </header>
                        <section>
                        <?php
-                       //vložení vlastního obsahu
                           include "$page";     
                                ?>
                                
                        </section>
                        <footer>&nbsp;</footer>
                </article>
-
+               
+        
+               
+               
                <footer>&copy; Jeřábková - ZČU</footer>
        </body>
 </html>
+
+
+
+
+
+
+
+
+
+

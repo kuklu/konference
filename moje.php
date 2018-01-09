@@ -1,14 +1,19 @@
-
-
 <?php
+$nadpis="Výpis článků";
+include "db.php";
+echo "<p> Výpis mých článků ";
+$kdo=$_SESSION['ID_user'];
 
-echo "<p> Výpis mých článků";
-$kdo = $_SESSION['ID_user'];
-$dotaz_clanky = $connect->prepare("SELECT * FROM clanky WHERE vlozil = $kdo");
+
+$dotaz_clanky = $connect->prepare("SELECT * FROM clanky WHERE vlozil=$kdo");
 $dotaz_clanky->execute();
 $clanek = $dotaz_clanky ->fetchAll();
 
-echo "<table style='width: 500px;' border='1'>
+foreach ($clanek as $clanky) {
+  
+    echo "
+   
+<table style='width: 500px;' border='1'>
 <tbody>
 <tr>
 <td>ID</td>
@@ -17,14 +22,10 @@ echo "<table style='width: 500px;' border='1'>
 <td>URL</td>
 <td>vlozil</td>
 <td>recenzent1</td>
-<td>recenzent2</td>                
+<td>recenzent2</td>
 <td>recenzent3</td>
 <td>Schvaleno</td>
-</tr>";
-foreach ($clanek as $clanky) {
-    //$tlacitko= "<a href=zmena.php?prava=4&kdo=".$uzivatel['ID_user'].">Admin</a>"." | "."<a href=zmena.php?prava=3&kdo=".$uzivatel['ID_user'].">Recenzent</a>";
-    echo "
-   
+</tr>
 <tr>
 <td>". $clanky['ID_clanky']. "</td>
 <td>". $clanky['nazev']. "</td>
@@ -43,3 +44,4 @@ foreach ($clanek as $clanky) {
     
 }
 
+?>

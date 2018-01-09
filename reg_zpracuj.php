@@ -9,17 +9,22 @@ $jmeno=$_POST['jmeno'];
 $prijmeni=$_POST['prijmeni'];
 $funkce=$_POST['funkce'];
 
+/*if($heslo1 != $heslo2){
+   
+    header ("Location: page.php?page=login.php&message=Neshodná hesla");	
+    exit;
+    }
+*/
+
   require "db.php";  
   $passh=md5($heslo1);  // zahashujeme heslo
 
-$unikat = $pdo->prepare("SELECT 1 FROM users WHERE email = ?");
+//ověření zda je email v databázi
+$unikat = $connect->prepare("SELECT 1 FROM users WHERE email = ?");
 $unikat->execute(array($email));
-$existujeJmeno = $unikat->fetchColumn();
+$existujeEmail = $unikat->fetchColumn();
 
-//if $existujeJmeno > 0 {echo "Jmeno zadáno"}
-//else {echo "jmeno nezadáno"};
-
-$existujeJmeno ? $backlink="index.php" : $backlink ="vlozeno.php";
+$existujeEmail ? $backlink="page.php?page=registrace.php" : $backlink ="page.php?page=ok.php";
  
 
  
@@ -32,16 +37,12 @@ $existujeJmeno ? $backlink="index.php" : $backlink ="vlozeno.php";
 //      $backlink="index.php?page=registrace&Alert=1";
 //    }else{              // povinné udaje vyplněny vsechny
         // pripojime se k databazi
-//mysqli_set_charset($link, "utf8");
-//      $PocetStejnych=mysql_result(mysql_query("SELECT COUNT(*) FROM `users` WHERE `email`='$email'"),0);
-//      if($PocetStejnych!=0){    // pokud v db je jiz takove jmeno nebo heslo...
-//        $backlink="index.php?page=registrace&Alert=2";
 //      }elseif($heslo1 != $heslo2){    // pokud se hesla nerovnají
 //        $backlink="index.php?page=registrace&Alert=3";
 //      }else{            // hesla se shoduji, vlozime tedy data do databaze
 
 // Připravení dotazu
-$vloz = $pdo->prepare("INSERT into users (email, heslo, jmeno, prijmeni, funkce, prava, schvalen) VALUES(?, ?, ?, ?, ?, ?, ?)");
+$vloz = $connect->prepare("INSERT into users (email, heslo, jmeno, prijmeni, funkce, prava, schvalen) VALUES(?, ?, ?, ?, ?, ?, ?)");
 // Vykonání dotazu
 $vysledek = $vloz->execute(array(
   $email, 

@@ -5,9 +5,9 @@
 body{
 	background: rgb(182, 170, 123); //#8D372A;
 	font-family: Arial, Helvetica, sans-serif;
-	margin-top: 15px;
-	margin-right: 150px;
-	margin-left: 150px;
+	margin-top: 3%;
+	margin-right: 7%;
+	margin-left: 7%;
 
 }
 
@@ -31,8 +31,8 @@ body header {
 /* poloha menu */
 body nav{
 	float: right;
-	padding-right: 0px;
-  padding-top: 35px;
+	padding-right: 0%;
+  padding-top: 0;
 }
 /* úprava nadpisu - styl, poloha*/
 body header h1 {
@@ -40,14 +40,13 @@ body header h1 {
 	font-size: 53px;
 	margin: 0px;
 	color: #FFF;
-	float: left;
-	padding-left: 50px;
-  padding-bottom: 8px;
+	float: center;
+  //text-align:center;
+	padding-left: 0;
+  padding-bottom: 0;
 	text-shadow: 1px 1px 2px #666;
   
-	/*-webkit-animation: animace 1s 1 ease;
-	-moz-animation: animace 1s 1 ease;
-	-o-animation: animace 1s 1 ease;	  */
+
 }
 /* úprava druhého nadpisu - styl, poloha*/
 body article header h1 {
@@ -55,9 +54,7 @@ body article header h1 {
 	color:#000;
 	float: none;
 	padding-left: 0px;
-	-webkit-animation: none;
-	-moz-animation: none;
-	-o-animation: none;
+
 }
  /* barva prvního písmene*/
 body article header h1:first-letter{
@@ -73,25 +70,24 @@ p {
   
 }
 
-/*safasfas */
-/*upravy textu v menu, zaoblení rámwčků */
+
+/*upravy textu v menu, zaoblení rámečků */
 a{
+  box-sizing: border-box;
 	text-decoration: none;
 	color: #FFF;
 	font-family: 'Cabin', /*Helvetica,*/ Arial, sans-serif;
 	font-size: 15px;
 	line-height: 25px;
-	margin-right: 5px;
-	margin-left: 5px;
-	padding-right: 7px;
-	padding-left: 7px;
+	margin:7px;  //margin-left: 5px;
+	padding:7px;  //padding-left: 7px;
 	background-color: #a43c2c;
 	padding-top: 4px;
 	padding-bottom: 4px;
-	-webkit-border-radius: 4px;            
-	-moz-border-radius: 4px;  
 	border-radius: 4px;
 }
+
+
 ul{
     list-style:none;
 }
@@ -99,76 +95,56 @@ li{
 	float: left;	
 }
 
-/* ????? */
-a:hover{
-	background-color: #742A1D;	
-  -webkit-transition: all 300ms ease-in-out;
-	-moz-transition: all 300ms ease-in-out;
-	-o-transition: all 300ms ease-in-out;
-	-ms-transition: all 300ms ease-in-out;
-	transition: all 300ms ease-in-out; 
-}
-nav li.active a{
-	background-color: #742A1D;
-}
 
-/* umístění a nastavení parametru bíléh obdélníku*/
+
+
+
+
+/* umístění a nastavení parametru bíléh obdélníku  + hranice kolem bílého obdélníku*/
 article{
-	background-color: #FFF;
-	border-right-width: 100px;
-	border-left-width: 100px;
-	border-right-style: solid;
-	border-left-style: solid;
-	border-right-color: #742A1D;
-	padding-left: 20px;
-	padding-right: 20px;
-	border-left-color: #742A1D;
-	padding-top: 10px;
-	padding-bottom: 100px;
+	background-color: #FFF;  //border-right-width: 20px;
+	border-width: 20px;
+	border-style: solid;  //border-left-style: solid;
+  border-color: #742A1D;
+  padding:3%;
+	//padding-left: 3%;
+	//padding-right: 5%;
+	//padding-top: 3%;
+	//padding-bottom: 5%;
 	text-align: justify;
 }
 /* barva pozadí pro jednotlivé prohlížeče? */
-#article-top{
-	margin-top:10px;
-	background: #a43c2c; /* Old browsers */
-	background: -moz-linear-gradient(-45deg,  #a43c2c 50%, #e1e1e1 50%, #742a1d 50%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,#a43c2c), color-stop(50%,#e1e1e1),     color-stop(50%,#742a1d)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* IE10+ */
-	background: linear-gradient(135deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* W3C */
-}
+//#article-top{
+//	margin-top:10px;
+//	background: #a43c2c; /* Old browsers */
+//	background: -moz-linear-gradient(-45deg,  #a43c2c 50%, #e1e1e1 50%, #742a1d 50%); /* FF3.6+ */
+//	background: -webkit-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* Chrome10+,Safari5.1+ */
+//	background: -ms-linear-gradient(-45deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* IE10+ */
+//	background: linear-gradient(135deg,  #a43c2c 50%,#e1e1e1 50%,#742a1d 50%); /* W3C */
+//}
+
 #logo{
 	display:none;
-}
-footer{
-	color:#FFF;
+}  
+
+footer{	color:#FFF;
 	font-family: 'Cabin', Helvetica, Arial, sans-serif;
-	font-size: 15px;
+	font-size: 80%;
 	text-align:right;
-	padding-right:151px;
-	padding-top:100px;
-	padding-bottom:2px;
+	padding-right:25px;
+	padding-top:0px;
+	padding-bottom:3px;    
 	background: #742a1d; /* Old browsers */
-	background: -moz-linear-gradient(-45deg,  #742a1d 50%, #a43c2c 50%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,#742a1d), color-stop(50%,#a43c2c)); /* 		    Chrome,Safari4+ */
-	background: -webkit-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* IE10+ */
-	background: linear-gradient(135deg,  #742a1d 50%,#a43c2c 50%); /* W3C */
-}
+
+
+//	background: -moz-linear-gradient(-45deg,  #742a1d 50%, #a43c2c 50%); /* FF3.6+ */
+//	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,#742a1d), color-stop(50%,#a43c2c)); /* 		    Chrome,Safari4+ */
+//	background: -webkit-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* Chrome10+,Safari5.1+ */
+//	background: -o-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* Opera 11.10+ */
+//	background: -ms-linear-gradient(-45deg,  #742a1d 50%,#a43c2c 50%); /* IE10+ */
+ // background: linear-gradient(135deg,  #742a1d 50%,#a43c2c 50%); /* W3C */
+} 
 body article footer{
 	display:none;
-}
-@-webkit-keyframes animace {
-	from { -webkit-transform: rotate(0deg) scale(0.738) skew(1deg) translate(0px); }
-	to { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
-}
-@-moz-keyframes animace {
-	from { -moz-transform: rotate(0deg) scale(0.738) skew(1deg) translate(0px); }
-	to { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
-}
-@-o-keyframes animace {
-	from { -o-transform: rotate(0deg) scale(0.738) skew(1deg) translate(0px); }
-	to { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
-}
+} 
+
